@@ -1,0 +1,11 @@
+---
+import { cn } from "@/lib/utils"
+
+const { pathname: currPath } = Astro.url
+const { path } = Astro.props
+const active = path === currPath
+---
+
+<nav class={cn(active ? "text-inherit" : "text-chalk/60")}>
+  <a href={path}><slot /></a>
+</nav>

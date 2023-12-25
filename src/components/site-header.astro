@@ -1,0 +1,35 @@
+---
+import NavLink from "@components/nav-link.astro"
+import Button from "@components/button.astro"
+---
+
+<header class="flex justify-between items-center m-6 text-chalk text-lg">
+  <a href="#">
+    <div class="flex gap-2">
+      <i data-lucide="backpack"></i>
+       Bon Voyage
+    </div>
+  </a>
+  <div class="flex gap-8">
+    <NavLink path="/">Home</NavLink>
+    <NavLink path="/articles">Articles</NavLink>
+    <NavLink path="/reviews">Reviews</NavLink>
+    <NavLink path="/rating">Rating</NavLink>
+  </div>
+  <div class="flex items-center gap-2">
+    <Button variant="secondary">Log in</Button>
+    <Button variant="secondary" size="circle">
+      <i data-lucide="search" class="size-4"></i>
+    </Button>
+  </div>
+</header>
+<script>
+  import { createIcons, Backpack, Search } from "lucide"
+
+  createIcons({
+    icons: {
+      Backpack,
+      Search,
+    },
+  })
+</script>
