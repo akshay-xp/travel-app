@@ -30,9 +30,9 @@ export interface Props
   extends HTMLAttributes<"button">,
     VariantProps<typeof button> {}
 
-const { variant = "primary", size = "md" } = Astro.props
+const { variant = "primary", size = "md", ...props } = Astro.props
 ---
 
-<button class={cn(button({ variant, size }))}>
+<button class={cn(button({ variant, size }))} {...props}>
   <slot />
 </button>
